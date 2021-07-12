@@ -1,0 +1,59 @@
+.pictureXL {
+  width: 60%;
+  height: 100%;
+  margin-left: 50%;
+  z-index: 20;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1480px) {
+  .pictureXL {
+    width: 60%;
+    height: 100%;
+    margin-left: 50%;
+    z-index: 20;
+  }
+}
+
+.titreArtist {
+  position: fixed;
+  color: white;
+  z-index: 100;
+  font-size: 5em;
+  margin-top: 1.5px;
+  margin-left: 1.5vw;
+  padding: 0px;
+  background: rgba(0, 0, 0, 0.9);
+  padding-right: 15px;
+  padding-left: 15px;
+  border: 1px solid #ff007f;
+}
+
+@media screen and (min-width: 1480px) {
+  .titreArtist {
+    position: fixed;
+    color: white;
+    z-index: 100;
+    font-size: 5em;
+    margin-top: 30px;
+    margin-left: 1vw;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.9);
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 1px solid #ff007f;
+  }
+}
+
+.Album {
+  display: flex;
+  width: 100%;
+  margin-top: 0px;
+}
+
+@media screen and(min-width:1480px) {
+  .Album {
+    display: flex;
+    width: 100%;
+    margin-top: 6.3px;
+  }
+}

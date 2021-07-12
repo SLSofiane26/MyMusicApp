@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap");
+
+.SearchPost {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 2px;
+}
+
+.SearchPost img {
+  width: 114px;
+  height: 113px;
+  border: 1px solid #ff007f;
+  margin-top: 2px;
+}
+
+@media screen and (min-width: 1480px) {
+  .SearchPost {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 2px;
+  }
+
+  .SearchPost img {
+    width: 140px;
+    height: 145px;
+    border: 1px solid #ff007f;
+    margin-top: 0px;
+  }
+
+  .SearchPost .fleche {
+    animation: anim;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+}
+
+.Hello img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 400;
+}
+
+.Hello img:hover {
+  border: 4px solid #ff007f;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  position: fixed;
+  border-radius: 80%;
+}
+
+.inputBis {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+}
+
+.inputBis::placeholder {
+  text-align: center;
+  color: white;
+  padding-left: 30px;
+  border: none;
+}
+
+.fleche {
+  animation: anim;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes anim {
+  from {
+    transform: translate(5px, 0px);
+    transform: translate(5px, 0px);
+  }
+
+  to {
+    transform: translate(0px, 80px);
+    transform: translate(0px, 80px);
+  }
+}
+
+/*# sourceMappingURL=Login.module.css.map */

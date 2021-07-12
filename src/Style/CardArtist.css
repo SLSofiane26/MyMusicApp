@@ -1,0 +1,21 @@
+.containerBis:hover {
+  animation: animationBis;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes animationBis {
+  from {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+  }
+  to {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-transform: skew(10deg, 10deg);
+    transform: skew(10deg, 10deg);
+  }
+}

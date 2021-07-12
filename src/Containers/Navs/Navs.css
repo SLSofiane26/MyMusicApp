@@ -1,0 +1,128 @@
+.navlink {
+  color: white;
+  font-size: 1em;
+}
+
+.containerHome {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 40;
+  margin-top: 15vh;
+}
+
+.videoHome {
+  width: 100%;
+  height: auto;
+  position: fixed;
+}
+
+.ContainerTitre {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  margin-top: 24vh;
+  justify-content: center;
+  color: white;
+}
+
+.titre {
+  color: black;
+  font-size: 15em;
+  font-family: 'Kalam', cursive;
+  margin: 0px;
+  padding: 0px;
+  transition: all 4s ease-in-out;
+  animation: anim 3s cubic-bezier(0.19, 1, 0.22, 1);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 4000;
+  position: fixed;
+}
+
+.rondBis {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: fixed;
+  border: 3px solid rgba(181, 255, 225, 1);
+  margin-top: 6vh;
+}
+
+.rondPr {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: fixed;
+  border: 3px solid #FF007F;
+}
+
+/* PORTABLE */
+
+@media screen and (max-width : 600px) {
+  .titre {
+    animation: none;
+    font-size: 5em;
+    margin-top: 25%;
+  }
+
+  .videoHome {
+    display: none;
+  }
+
+}
+
+/* TABLETTE  */
+
+@media screen and (min-width:600px) and (max-width:1023px) {
+
+  .titre {
+    font-size: 13em;
+    animation: none;
+  }
+
+  .videoHome {
+    display: none;
+  }
+
+}
+
+
+
+/* PCPORTABLE */
+
+@media screen and (min-width:1024px) {}
+
+/*GRANDECRAN*/
+
+@media screen and (min-width : 1441px) {}
+
+
+@keyframes anim {
+  from {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    color: white;
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    color: black;
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    color: white;
+  }
+
+  100% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');

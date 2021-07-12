@@ -1,0 +1,157 @@
+nav img {
+  transition: all 1s ease-in-out;
+}
+
+nav img:hover {
+  -webkit-transform: scale(1.2) translate(0px, 1px);
+  transform: scale(1.2) translate(0px, 1px);
+}
+
+@media screen and (min-width: 1450px) {
+  .ContainerCard {
+    display: flex;
+    margin-top: 15px;
+  }
+
+  .PictureS {
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .PictureM {
+    width: 205px;
+    height: 205px;
+    border-radius: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .containerMusic {
+    width: 100vw;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: fixed;
+  }
+
+  .PictureM:hover {
+    animation: anim;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-duration: 0.7s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+
+  .containerMusic {
+    width: 100vw;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 0.2%;
+  }
+
+  .titreArticle {
+    margin-top: 10.5px;
+  }
+
+  .titreSearch {
+    text-align: center;
+    font-size: 5em;
+    z-index: 5000;
+    color: white;
+    position: fixed;
+    margin-left: 13px;
+    margin-top: 410px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ff007f;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1480px) {
+  .titreSearch {
+    text-align: center;
+    position: fixed;
+    font-size: 5em;
+    z-index: 5000;
+    color: white;
+    margin-left: 13px;
+    margin-top: 320px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ff007f;
+    padding: 20px;
+    transition: all 1s cubic-bezier(0.59, 0.09, 0.87, 0.39);
+  }
+
+  .titreArticle {
+    margin-top: 9.45px;
+  }
+
+  .ContainerCard {
+    margin-top: 0.2%;
+  }
+
+  .PictureS {
+    width: 50px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border-radius: 100%;
+  }
+
+  .PictureM {
+    border-radius: 100%;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    height: 180px;
+  }
+
+  .containerMusic {
+    width: 100vw;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 0.35%;
+  }
+
+  .PictureM:hover {
+    animation: anim;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+}
+
+@keyframes anim {
+  0% {
+    -webkit-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+  }
+
+  50% {
+    -webkit-transform: skew(6deg, 6deg);
+    transform: skew(6deg, 6deg);
+  }
+
+  100% {
+    -webkit-transform: skew(-6deg, -6deg);
+    transform: skew(-6deg, -6deg);
+  }
+}
+
+/*# sourceMappingURL=DataHomeMusic.module.css.map */
