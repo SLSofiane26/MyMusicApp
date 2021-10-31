@@ -1,10 +1,10 @@
-import Axios from 'axios';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import Axios from "axios";
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
 export let AUTH = (email, password, state) => async (dispatch) => {
   dispatch({
-    type: 'STARTLOGIN',
+    type: "STARTLOGIN",
     payload: {
       email: email,
       password: password,
@@ -26,12 +26,12 @@ export let AUTH = (email, password, state) => async (dispatch) => {
   await Axios.post(url, dataBis)
     .then((res) => {
       let expDate = new Date(new Date().getTime() + 3600 * 1000).getTime();
-      localStorage.setItem('idToken', res.data.idToken);
-      localStorage.setItem('localId', res.data.localId);
-      localStorage.setItem('name', res.data.displayName);
-      localStorage.setItem('photo', res.data.profilePicture);
-      localStorage.setItem('email', res.data.email);
-      localStorage.setItem('expDate', expDate);
+      localStorage.setItem("idToken", res.data.idToken);
+      localStorage.setItem("localId", res.data.localId);
+      localStorage.setItem("name", res.data.displayName);
+      localStorage.setItem("photo", res.data.profilePicture);
+      localStorage.setItem("email", res.data.email);
+      localStorage.setItem("expDate", expDate);
       dispatch(Succes(res.data.idToken, res.data.localId));
       dispatch(authTimeOut(res.data.expiresIn));
     })
@@ -41,11 +41,11 @@ export let AUTH = (email, password, state) => async (dispatch) => {
 };
 
 export let updateProfil = (photo, name, email) => async (dispatch) => {
-  if ((photo = 'undefined')) {
+  if ((photo = "undefined")) {
     photo = null;
   }
   dispatch({
-    type: 'UPDATEPROFIL',
+    type: "UPDATEPROFIL",
     payload: {
       photo: photo,
       name: name,
@@ -62,7 +62,7 @@ export let authTimeOut = (expiration) => async (dispatch) => {
 
 export let SendEmail = (email) => async (dispatch) => {
   let data = {
-    requestType: 'PASSWORD_RESET',
+    requestType: "PASSWORD_RESET",
     email: email,
   };
   await Axios.post(
@@ -75,7 +75,7 @@ export let SendEmail = (email) => async (dispatch) => {
 
 export let Succes = (token, localId) => async (dispatch) => {
   dispatch({
-    type: 'SUCCESLOGIN',
+    type: "SUCCESLOGIN",
     payload: {
       token: token,
       Id: localId,
@@ -85,7 +85,7 @@ export let Succes = (token, localId) => async (dispatch) => {
 
 export let Failed = (err) => async (dispatch) => {
   dispatch({
-    type: 'FAILEDLOGIN',
+    type: "FAILEDLOGIN",
     payload: {
       data: err,
     },
@@ -93,26 +93,26 @@ export let Failed = (err) => async (dispatch) => {
 };
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyCIkaptA-fUVnsef604vYmW4tiYDLexxL0',
-  authDomain: 'project-327bb.firebaseapp.com',
-  databaseURL: 'https://project-327bb.firebaseio.com',
-  projectId: 'project-327bb',
-  storageBucket: 'project-327bb.appspot.com',
-  messagingSenderId: '47077319301',
-  appId: '1:47077319301:web:34b65cab5559b17cedffec',
-  measurementId: 'G-6D19145XJP',
+  apiKey: "AIzaSyArqvfKvHtwmi0wcgR75Dk7Hpzy4Ob9U4o",
+  authDomain: "hamburger-afe4d.firebaseapp.com",
+  databaseURL: "https://hamburger-afe4d.firebaseio.com",
+  projectId: "hamburger-afe4d",
+  storageBucket: "hamburger-afe4d.appspot.com",
+  messagingSenderId: "235822040538",
+  appId: "1:235822040538:web:5db98f399d572090736ce3",
+  measurementId: "G-57MXB20F63",
 };
 
 firebase.initializeApp(firebaseConfig);
 
 let provider = new firebase.auth.GoogleAuthProvider();
-firebase.auth().languageCode = 'fr_FR';
+firebase.auth().languageCode = "fr_FR";
 
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
 
 export let GoogleAuth = () => async (dispatch) => {
   dispatch({
-    type: 'STARTLOGIN',
+    type: "STARTLOGIN",
   });
 
   await firebase
@@ -120,12 +120,12 @@ export let GoogleAuth = () => async (dispatch) => {
     .signInWithPopup(provider)
     .then((res) => {
       let expDate = new Date(new Date().getTime() + 36000 * 10000).getTime();
-      localStorage.setItem('idToken', res.credential.idToken);
-      localStorage.setItem('localId', res.credential.accessToken);
-      localStorage.setItem('name', res.user.displayName);
-      localStorage.setItem('photo', res.user.photoURL);
-      localStorage.setItem('email', res.user.email);
-      localStorage.setItem('expDate', expDate);
+      localStorage.setItem("idToken", res.credential.idToken);
+      localStorage.setItem("localId", res.credential.accessToken);
+      localStorage.setItem("name", res.user.displayName);
+      localStorage.setItem("photo", res.user.photoURL);
+      localStorage.setItem("email", res.user.email);
+      localStorage.setItem("expDate", expDate);
       dispatch(Succes(res.credential.idToken, res.credential.accessToken));
       dispatch(authTimeOut(3600));
     })
@@ -136,19 +136,19 @@ var providerBis = new firebase.auth.FacebookAuthProvider();
 
 export let FacebookLong = () => async (dispatch) => {
   dispatch({
-    type: 'STARTLOGIN',
+    type: "STARTLOGIN",
   });
   await firebase
     .auth()
     .signInWithPopup(providerBis)
     .then((res) => {
       let expDate = new Date(new Date().getTime() + 3600 * 10000).getTime();
-      localStorage.setItem('idToken', res.credential.accessToken);
-      localStorage.setItem('localiD', res.additionalUserInfo.profile.id);
-      localStorage.setItem('expDate', expDate);
-      localStorage.setItem('photo', res.user.photoURL);
-      localStorage.setItem('email', res.user.email);
-      localStorage.setItem('name', res.user.displayName);
+      localStorage.setItem("idToken", res.credential.accessToken);
+      localStorage.setItem("localiD", res.additionalUserInfo.profile.id);
+      localStorage.setItem("expDate", expDate);
+      localStorage.setItem("photo", res.user.photoURL);
+      localStorage.setItem("email", res.user.email);
+      localStorage.setItem("name", res.user.displayName);
       dispatch(
         Succes(res.credential.providerId, res.additionalUserInfo.profile.id)
       );
@@ -160,19 +160,19 @@ export let FacebookLong = () => async (dispatch) => {
 };
 
 export let CheikAuth = () => async (dispatch) => {
-  let name = localStorage.getItem('name');
-  let photo = localStorage.getItem('photo');
-  let email = localStorage.getItem('email');
+  let name = localStorage.getItem("name");
+  let photo = localStorage.getItem("photo");
+  let email = localStorage.getItem("email");
   dispatch(updateProfil(photo, name, email));
-  let token = localStorage.getItem('idToken');
+  let token = localStorage.getItem("idToken");
   if (!token) {
     dispatch(Logout());
   } else {
-    let expDateBis = localStorage.getItem('expDate');
+    let expDateBis = localStorage.getItem("expDate");
     if (expDateBis < new Date().getTime()) {
       dispatch(Logout());
     } else {
-      let id = localStorage.getItem('localId');
+      let id = localStorage.getItem("localId");
       dispatch(
         authTimeOut((expDateBis - new Date(new Date().getTime())) / 1000)
       );
@@ -182,14 +182,14 @@ export let CheikAuth = () => async (dispatch) => {
 };
 
 export let Logout = () => async (dispatch) => {
-  localStorage.removeItem('idToken');
-  localStorage.removeItem('localId');
-  localStorage.removeItem('expDate');
-  localStorage.removeItem('name');
-  localStorage.removeItem('photo');
-  localStorage.removeItem('email');
-  localStorage.removeItem('localiD');
+  localStorage.removeItem("idToken");
+  localStorage.removeItem("localId");
+  localStorage.removeItem("expDate");
+  localStorage.removeItem("name");
+  localStorage.removeItem("photo");
+  localStorage.removeItem("email");
+  localStorage.removeItem("localiD");
   dispatch({
-    type: 'LOGOUT',
+    type: "LOGOUT",
   });
 };
